@@ -1,0 +1,106 @@
+Attaching to consul, redis, consul_registrator, webapp2, webapp1
+[36mconsul         |[0m ==> WARNING: Bootstrap mode enabled! Do not enable unless necessary
+[36mconsul         |[0m ==> WARNING: It is highly recommended to set GOMAXPROCS higher than 1
+[36mconsul         |[0m ==> Starting raft data migration...
+[36mconsul         |[0m ==> Starting Consul agent...
+[36mconsul         |[0m ==> Starting Consul agent RPC...
+[36mconsul         |[0m ==> Consul agent running!
+[36mconsul         |[0m          Node name: 'consul'
+[36mconsul         |[0m         Datacenter: 'dc1'
+[36mconsul         |[0m             Server: true (bootstrap: true)
+[36mconsul         |[0m        Client Addr: 0.0.0.0 (HTTP: 8500, HTTPS: -1, DNS: 53, RPC: 8400)
+[36mconsul         |[0m       Cluster Addr: 172.19.0.2 (LAN: 8301, WAN: 8302)
+[36mconsul         |[0m     Gossip encrypt: false, RPC-TLS: false, TLS-Incoming: false
+[36mconsul         |[0m              Atlas: <disabled>
+[36mconsul         |[0m 
+[36mconsul         |[0m ==> Log data will now stream in as it occurs:
+[36mconsul         |[0m 
+[36mconsul         |[0m     2016/09/26 17:59:09 [INFO] serf: EventMemberJoin: consul 172.19.0.2
+[36mconsul         |[0m     2016/09/26 17:59:09 [INFO] serf: EventMemberJoin: consul.dc1 172.19.0.2
+[36mconsul         |[0m     2016/09/26 17:59:09 [INFO] raft: Node at 172.19.0.2:8300 [Follower] entering Follower state
+[36mconsul         |[0m     2016/09/26 17:59:09 [INFO] consul: adding server consul (Addr: 172.19.0.2:8300) (DC: dc1)
+[36mconsul         |[0m     2016/09/26 17:59:09 [INFO] consul: adding server consul.dc1 (Addr: 172.19.0.2:8300) (DC: dc1)
+[36mconsul         |[0m     2016/09/26 17:59:09 [ERR] agent: failed to sync remote state: No cluster leader
+[36mconsul         |[0m     2016/09/26 17:59:10 [WARN] Service name "consuldocker_webapp1" will not be discoverable via DNS due to invalid characters. Valid characters include all alpha-numerics and dashes.
+[36mconsul         |[0m     2016/09/26 17:59:10 [ERR] agent: failed to sync changes: No cluster leader
+[36mconsul         |[0m     2016/09/26 17:59:10 [WARN] Service name "consuldocker_webapp2" will not be discoverable via DNS due to invalid characters. Valid characters include all alpha-numerics and dashes.
+[36mconsul         |[0m     2016/09/26 17:59:10 [ERR] agent: failed to sync changes: No cluster leader
+[33mredis          |[0m 1:C 26 Sep 17:59:09.375 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+[33mredis          |[0m                 _._                                                  
+[33mredis          |[0m            _.-``__ ''-._                                             
+[33mredis          |[0m       _.-``    `.  `_.  ''-._           Redis 3.2.3 (00000000/0) 64 bit
+[33mredis          |[0m   .-`` .-```.  ```\/    _.,_ ''-._                                   
+[33mredis          |[0m  (    '      ,       .-`  | `,    )     Running in standalone mode
+[33mredis          |[0m  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+[33mredis          |[0m  |    `-._   `._    /     _.-'    |     PID: 1
+[33mredis          |[0m   `-._    `-._  `-./  _.-'    _.-'                                   
+[33mredis          |[0m  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+[33mredis          |[0m  |    `-._`-._        _.-'_.-'    |           http://redis.io        
+[33mredis          |[0m   `-._    `-._`-.__.-'_.-'    _.-'                                   
+[33mredis          |[0m  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+[33mredis          |[0m  |    `-._`-._        _.-'_.-'    |                                  
+[33mredis          |[0m   `-._    `-._`-.__.-'_.-'    _.-'                                   
+[33mredis          |[0m       `-._    `-.__.-'    _.-'                                       
+[33mredis          |[0m           `-._        _.-'                                           
+[33mredis          |[0m               `-.__.-'                                               
+[33mredis          |[0m 
+[33mredis          |[0m 1:M 26 Sep 17:59:09.376 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+[33mredis          |[0m 1:M 26 Sep 17:59:09.376 # Server started, Redis version 3.2.3
+[33mredis          |[0m 1:M 26 Sep 17:59:09.376 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+[33mredis          |[0m 1:M 26 Sep 17:59:09.376 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+[33mredis          |[0m 1:M 26 Sep 17:59:09.376 * The server is now ready to accept connections on port 6379
+[36mconsul         |[0m     2016/09/26 17:59:10 [ERR] agent: failed to sync changes: No cluster leader
+[36mconsul         |[0m     2016/09/26 17:59:10 [ERR] agent: failed to sync changes: No cluster leader
+[32mconsul_registrator |[0m 2016/09/26 17:59:09 Starting registrator v7 ...
+[32mconsul_registrator |[0m 2016/09/26 17:59:09 Using consul adapter: consul://consul:8500
+[32mconsul_registrator |[0m 2016/09/26 17:59:09 Connecting to backend (0/0)
+[32mconsul_registrator |[0m 2016/09/26 17:59:09 consul: current leader  
+[32mconsul_registrator |[0m 2016/09/26 17:59:09 Listening for Docker events ...
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 Syncing services on 5 containers
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 added: 56a301c1cedd a37296001324:webapp1:5000
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 added: 906e13491083 a37296001324:webapp2:5000
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: a37296001324 no published ports
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 added: f51a7311ec36 a37296001324:redis:6379
+[36mconsul         |[0m     2016/09/26 17:59:10 [ERR] agent: failed to sync changes: No cluster leader
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 added: 71e0b8541c48 a37296001324:consul:8400
+[36mconsul         |[0m     2016/09/26 17:59:10 [ERR] agent: failed to sync changes: No cluster leader
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 added: 71e0b8541c48 a37296001324:consul:8500
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: 71e0b8541c48 port 8300 not published on host
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: 71e0b8541c48 port 8301 not published on host
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: 71e0b8541c48 port 53 not published on host
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 added: 71e0b8541c48 a37296001324:consul:53:udp
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: 71e0b8541c48 port 8302 not published on host
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: 71e0b8541c48 port 8301 not published on host
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: 71e0b8541c48 port 8302 not published on host
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 ignored: a37296001324 no published ports
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 container,  906e13491083 , already exists, ignoring
+[32mconsul_registrator |[0m 2016/09/26 17:59:10 container,  56a301c1cedd , already exists, ignoring
+[35mwebapp2        |[0m  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[35mwebapp2        |[0m  * Restarting with stat
+[31mwebapp1        |[0m  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[31mwebapp1        |[0m  * Restarting with stat
+[35mwebapp2        |[0m  * Debugger is active!
+[35mwebapp2        |[0m  * Debugger pin code: 332-615-744
+[31mwebapp1        |[0m  * Debugger is active!
+[31mwebapp1        |[0m  * Debugger pin code: 324-206-226
+[36mconsul         |[0m     2016/09/26 17:59:11 [WARN] raft: Heartbeat timeout reached, starting election
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] raft: Node at 172.19.0.2:8300 [Candidate] entering Candidate state
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] raft: Election won. Tally: 1
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] raft: Node at 172.19.0.2:8300 [Leader] entering Leader state
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] consul: cluster leadership acquired
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] consul: New leader elected: consul
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] raft: Disabling EnableSingleNode (bootstrap)
+[36mconsul         |[0m     2016/09/26 17:59:11 [INFO] consul: member 'consul' joined, marking health alive
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'a37296001324:consul:8400'
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'a37296001324:consul:8500'
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'a37296001324:consul:53:udp'
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'consul'
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'a37296001324:webapp1:5000'
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'a37296001324:webapp2:5000'
+[36mconsul         |[0m     2016/09/26 17:59:13 [INFO] agent: Synced service 'a37296001324:redis:6379'
+[35mwebapp2        |[0m 172.19.0.1 - - [26/Sep/2016 18:04:43] "GET / HTTP/1.1" 200 -
+[31mwebapp1        |[0m 172.19.0.1 - - [26/Sep/2016 18:04:46] "GET / HTTP/1.1" 200 -
+[35mwebapp2        |[0m 172.19.0.1 - - [26/Sep/2016 18:04:47] "GET / HTTP/1.1" 200 -
+[31mwebapp1        |[0m 172.19.0.1 - - [26/Sep/2016 18:04:48] "GET / HTTP/1.1" 200 -
+[35mwebapp2        |[0m 172.19.0.1 - - [26/Sep/2016 18:04:50] "GET / HTTP/1.1" 200 -
+Gracefully stopping... (press Ctrl+C again to force)

@@ -1,0 +1,64 @@
+version: '2'
+services:
+#
+# Service Discovery - Consul
+#
+  consul:
+    image: "progrium/consul:latest"
+    container_name: "consul"
+    hostname: "consul"
+    ports:
+      - "8400:8400"
+      - "8500:8500"
+      - "172.19.0.1:53:53/udp"
+    command: "-server -bootstrap"
+#
+# Service Discovery - Registrator
+#
+  registrator:
+    container_name: consul_registrator
+    command: consul://consul:8500
+    image: gliderlabs/registrator:latest
+    links:
+     - consul
+    volumes:
+     - "/var/run/docker.sock:/tmp/docker.sock"
+#
+# Storage - Redis
+#
+  redis:
+    container_name: redis
+    image: "redis:latest"
+    ports:
+     - "6379:6379"
+#
+# Webapp - Flask
+#
+  webapp1:
+    container_name: webapp1
+    hostname: "webapp"
+    build: ./app/
+    ports:
+     - "5000:5000"
+    volumes:
+     - ./app/:/code
+    depends_on:
+     - redis
+    dns:
+     - 8.8.8.8
+     - 8.8.4.4
+     - 172.19.0.1
+  webapp2:
+    container_name: webapp2
+    hostname: "webapp"
+    build: ./app/
+    ports:
+     - "5001:5000"
+    volumes:
+     - ./app/:/code
+    depends_on:
+     - redis
+    dns:
+     - 8.8.8.8
+     - 8.8.4.4
+     - 172.19.0.1
