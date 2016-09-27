@@ -42,6 +42,8 @@ services:
      - "5000:5000"
     volumes:
      - ./app/:/code
+    environment:
+    - SERVICE_NAME=app
     depends_on:
      - redis
     dns:
@@ -56,6 +58,8 @@ services:
      - "5001:5000"
     volumes:
      - ./app/:/code
+    environment:
+    - SERVICE_NAME=app
     depends_on:
      - redis
     dns:
